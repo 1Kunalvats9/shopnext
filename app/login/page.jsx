@@ -1,4 +1,5 @@
 "use client"
+import { response } from 'express'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 
@@ -41,6 +42,7 @@ const page = () => {
           const errorResult = JSON.parse(responseText);
           errorMessage = errorResult.message || errorMessage;
         } catch (parseError) {
+          console.log(responseText)
           console.error('Login failed with non-JSON response:', responseText);
           errorMessage = responseText.substring(0, 100) || errorMessage;
         }
