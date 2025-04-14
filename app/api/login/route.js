@@ -7,7 +7,7 @@ import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 
 export async function POST(req) {
-  'use server'
+
   await dbConnect();
   const JWT_SECRET = process.env.JWT_SECRET;
 
